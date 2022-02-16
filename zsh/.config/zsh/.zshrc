@@ -12,3 +12,4 @@ source $(dirname $(gem which colorls))/tab_complete.sh
 
 alias ls="colorls"
 alias ssh="TERM=xterm-256color; ssh"
+alias v3="vim ~/.config/i3/config"
