@@ -12,14 +12,15 @@ configuration {
 	width: 30;
 	line-margin: 10;
 	lines: 6;
-	columns: 2;
-
-    display-ssh:    "";
-    display-run:    "";
-    display-drun:   "";
-    display-window: "";
-    display-combi:  "";
-    show-icons:     true;
+	columns: 3;
+	modi: "drun,ssh,window,run";
+	sidebar-mode: true;
+    	display-ssh:    " SSH:";
+    	display-run:    " COMMAND";
+    	display-drun:   " RUN:";
+    	display-window: " WINDOW: ";
+    	display-combi:  "";
+    	show-icons:     true;
 }
 
 * {
