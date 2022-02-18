@@ -18,7 +18,7 @@ set -g history-limit 5000                 # boost history
 #bind e new-window -n "~/.tmux.conf.local" "EDITOR=\${EDITOR//mvim/vim} && EDITOR=\${EDITOR//g vim/vim} && \${EDITOR:-vim} ~/.tmux.conf.local && tmux source ~/.tmux.conf && tmux display " ~/.tmux.conf sourced\""
 
 # reload configuration
-bind r source-file ~/.tmux.conf \; display '~/.tmux.conf sourced'
+bind r source-file ~/.config/tmux/tmux.conf \; display '~/.config.tmux/tmux.conf sourced'
 
 # -- display -------------------------------------------------------------------
 
@@ -63,7 +63,7 @@ bind > swap-pane -D       # swap current pane with the next one
 bind < swap-pane -U       # swap current pane with the previous one
 
 # maximize current pane
-bind + run 'cut -c3- ~/.tmux.conf | sh -s _maximize_pane "#{session_name}" #D'
+bind + run 'cut -c3- ~/.config/tmux/tmux.conf | sh -s _maximize_pane "#{session_name}" #D'
 
 # pane resizing
 bind -r H resize-pane -L 2
@@ -81,6 +81,8 @@ bind Tab last-window        # move to last active window
 # -- user defined overrides ----------------------------------------------------
 
 source -q ~/.config/tmux/tmux.conf.local
+
+TMUX_FZF_LAUNCH_KEY="C-f"
 
 #-- tpm ---------------------------------
 

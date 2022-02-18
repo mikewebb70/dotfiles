@@ -72,69 +72,34 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 # JavaScript requires a restart.
 # Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
-
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
-
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
 
-# Which method of blocking ads should be used.  Support for Adblock Plus
-# (ABP) syntax blocklists using Brave's Rust library requires the
-# `adblock` Python package to be installed, which is an optional
-# dependency of qutebrowser. It is required when either `adblock` or
-# `both` are selected.
-# Type: String
-# Valid values:
-#   - auto: Use Brave's ABP-style adblocker if available, host blocking otherwise
-#   - adblock: Use Brave's ABP-style adblocker
-#   - hosts: Use hosts blocking
-#   - both: Use both hosts blocking and Brave's ABP-style adblocker
+# Ad Blocking
 c.content.blocking.method = 'adblock'
-
-# List of URLs to ABP-style adblocking rulesets.  Only used when Brave's
-# ABP-style adblocker is used (see `content.blocking.method`).  You can
-# find an overview of available lists here:
-# https://adblockplus.org/en/subscriptions - note that the special
-# `subscribe.adblockplus.org` links aren't handled by qutebrowser, you
-# will instead need to find the link to the raw `.txt` file (e.g. by
-# extracting it from the `location` parameter of the subscribe URL and
-# URL-decoding it).
-# Type: List of Url
-c.content.blocking.adblock.lists = ['https://easylist.to/easylist/easylist.txt', 'https://easylist.to/easylist/easyprivacy.txt', 'https://easylist.to/easylist/fanboy-social.txt', 'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt', 'https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts', 'https://www.i-dont-care-about-cookies.eu/abp/', 'https://secure.fanboy.co.nz/fanboy-annoyance.txt', 'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt', 'https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt']
+c.content.blocking.adblock.lists = [
+        'https://easylist.to/easylist/easylist.txt', 
+        'https://easylist.to/easylist/easyprivacy.txt', 
+        'https://easylist.to/easylist/fanboy-social.txt', 
+        'https://easylist-downloads.adblockplus.org/abp-filters-anti-cv.txt', 
+        'https://pgl.yoyo.org/adservers/serverlist.php?showintro=0;hostformat=hosts', 
+        'https://www.i-dont-care-about-cookies.eu/abp/', 
+        'https://secure.fanboy.co.nz/fanboy-annoyance.txt', 
+        'https://secure.fanboy.co.nz/fanboy-cookiemonster.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/legacy.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2020.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/filters-2021.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badware.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/privacy.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/badlists.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/annoyances.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/resource-abuse.txt', 
+        'https://github.com/uBlockOrigin/uAssets/raw/master/filters/unbreak.txt']
 
 # Load images automatically in web pages.
 # Type: Bool
 config.set('content.images', True, 'chrome-devtools://*')
-
-# Load images automatically in web pages.
-# Type: Bool
 config.set('content.images', True, 'devtools://*')
 
 # Show javascript alerts.
@@ -144,17 +109,8 @@ c.content.javascript.alert = False
 # Enable JavaScript.
 # Type: Bool
 config.set('content.javascript.enabled', True, 'chrome-devtools://*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'devtools://*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'chrome://*/*')
-
-# Enable JavaScript.
-# Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
 
 # Allow websites to show notifications.
@@ -179,7 +135,7 @@ c.completion.cmd_history_max_items = 15
 # Number of URLs to show in the web history. 0: no history / -1:
 # unlimited
 # Type: Int
-c.completion.web_history.max_items = 20
+c.completion.web_history.max_items = 40
 
 # When/how to show the scrollbar.
 # Type: String
@@ -226,7 +182,12 @@ c.url.searchengines = {'DEFAULT': 'https://duckduckgo.com/?q={}', 'gg': 'https:/
 # `colors.webpage.darkmode.threshold.background` to 205.  - "With
 # selective inversion of everything": Combines the two variants   above.
 # Type: Bool
-#c.colors.webpage.darkmode.enabled = True
+c.colors.webpage.darkmode.enabled = True
 
 # Bindings for normal mode
+
+# Open online videos in a stand alone player (mpv) 
 config.bind('M', 'hint links spawn mpv {hint-url}')
+c.editor.command = ['alacritty', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+
+
