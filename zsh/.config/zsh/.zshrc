@@ -22,7 +22,8 @@ source /usr/share/fzf/completion.zsh
 
 alias ls="colorls"
 alias ssh="TERM=xterm-256color; ssh"
-alias v3="vim ~/.config/i3/config"
+alias v3="nvim ~/.config/i3/config"
+alias vim="nvim"
 alias grep="rg"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
