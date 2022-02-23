@@ -25,6 +25,7 @@ alias ssh="TERM=xterm-256color; ssh"
 alias v3="nvim ~/.config/i3/config"
 alias vim="nvim"
 alias grep="rg"
+alias yay="paru"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

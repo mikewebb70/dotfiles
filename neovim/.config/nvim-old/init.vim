@@ -71,18 +71,36 @@ set showmode
 " -- Start Plugins ------------------------------------------
 call plug#begin()
 
-" If you are using Vim-Plug
-Plug 'shaunsingh/nord.nvim'
+" Useful lua functions used ny lots of plugins
+Plug 'nvim-lua/plenary.nvim' 
+" nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
+Plug 'nvim-lua/popup.nvim'
 
+" Colour Scheme. I like the subtle and mellowness of this theme
+Plug 'arcticicestudio/nord-vim'
+
+" Nerdtree and extensions
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+
+" FZF stuff
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'airblade/vim-rooter'
+
+Plug  'hrsh7th/nvim-cmp'    " The completion plugin
+Plug 'hrsh7th/cmp-buffer'   " buffer completions
+Plug 'hrsh7th/cmp-path'     " path completions
+Plug 'hrsh7th/cmp-cmdline'  " cmdline completions
+Plug 'saadparwaiz1/cmp_luasnip' " snippet completions
 
 call plug#end()
 "-- End Plugins ----------------------------------------------
 
-let g:nord_contrast = v:true
-let g:nord_borders = v:false
-let g:nord_disable_background = v:false
-let g:nord_italic = v:false
+" -- Load in plugin specific configs -------------------------
 
-" Load the colorscheme
-colorscheme nord
+" Nerdtree 
+source ~/.config/nvim/user.conf/nerdtree.vim
 
+" Nord colour theme
+source ~/.config/nvim/user.conf/nord.vim
