@@ -188,6 +188,7 @@ c.colors.webpage.darkmode.enabled = True
 
 # Open online videos in a stand alone player (mpv) 
 config.bind('M', 'hint links spawn mpv {hint-url}')
-c.editor.command = ['alacritty', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
+config.bind(';W','spawn --detach mpv --force-window yes {url}')
 
+c.editor.command = ['alacritty', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
 
