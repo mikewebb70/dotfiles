@@ -76,7 +76,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Start Applications
 bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod1+f exec alacritty -e "ranger" 
+bindsym $mod1+f exec alacritty --class ranger-fm -e ranger 
 bindsym $mod1+Shift+f exec pcmanfm_pkexec
 bindsym $mod1+m exec alacritty --class mocp-scratch -e mocp
 bindsym $mod+t exec --no-startup-id pkill picom
@@ -248,7 +248,7 @@ for_window [instance="mocp-scratch"] floating enable
 for_window [instance="mocp-scratch"] move scratchpad
 for_window [instance="mocp-scratch"] border pixel 5
 for_window [instance="mocp-scratch"] resize set 1000 600 
-
+for_window [instance="ranger-fm"] floating enable
 
 
 
