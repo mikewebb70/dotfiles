@@ -6,5 +6,15 @@
 
 config_version: 2
 settings:
-  auto_save.session:
-    global: false
+  bindings.commands:
+    global:
+      normal:
+        ;W: spawn --detach mpv --force-window yes {url}
+        J: tab-prev
+        K: tab-next
+        M: hint links spawn mpv {hint-url}
+        m: spawn --detach mpv --force-window yes {url}
+  spellcheck.languages:
+    global:
+    - en-US
+    - en-GB
