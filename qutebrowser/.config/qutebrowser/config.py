@@ -49,7 +49,6 @@ c.content.autoplay = False
 #   - no-unknown-3rdparty: Accept cookies from the same origin only, unless a cookie is already set for the domain. On QtWebEngine, this is the same as no-3rdparty.
 #   - never: Don't accept cookies at all.
 config.set('content.cookies.accept', 'all', 'chrome-devtools://*')
-
 config.set('content.cookies.accept', 'all', 'devtools://*')
 
 # Value to send in the `Accept-Language` header. Note that the value
@@ -74,7 +73,7 @@ config.set('content.headers.accept_language', '', 'https://matchmaker.krunker.io
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
-
+config.set('content.headers.user_agent', 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36', 'https://*.acloud.guru/*')
 # Ad Blocking
 c.content.blocking.method = 'adblock'
 c.content.blocking.adblock.lists = [
@@ -498,5 +497,7 @@ c.colors.tabs.selected.even.bg = base02
 # Open online videos in a stand alone player (mpv) 
 config.bind('M', 'hint links spawn mpv {hint-url}')
 config.bind('m','spawn --detach mpv --force-window yes {url}')
-
+config.bind('www', 'spawn --userscript qute-bitwarden')
+config.bind('wwp', 'spawn --userscript qute-bitwarden --password-only')
+config.bind('wwu', 'spawn --userscript qute-bitwarden --username-only')
 c.editor.command = ['alacritty', '-e', 'nvim', '{file}', '-c', 'normal {line}G{column0}l']
