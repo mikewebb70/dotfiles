@@ -1,1 +1,2 @@
-*.Zcompdump
+*.zcompdump
+qutebrowser/.config/qutebrowser/bookmarks/urls

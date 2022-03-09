@@ -27,7 +27,7 @@ export WGETRC="$XDG_CONFIG_HOME/wgetrc"
 
 #  Default Apps
 export EDITOR="vim"
-# export READER="zathura"
+export READER="zathura"
 export VISUAL="vim"
 export TERMINAL="alacritty"
 export BROWSER="qutebrowser"
