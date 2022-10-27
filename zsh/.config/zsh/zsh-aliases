@@ -1,0 +1,14 @@
+#
+# ZSH aliases
+#
+alias ls="lsd"
+alias ll="ls -l"
+alias la="ls -a"
+alias lla="ls -la"
+alias ssh="TERM=xterm-256color; ssh"
+alias v3="nvim ~/.config/i3/config"
+alias vim="nvim"
+alias v="vim"
+alias grep="rg"
+alias yay="paru"
+

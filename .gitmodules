@@ -1,6 +1,0 @@
-[submodule "tmux/.config/tmux/plugins/nord-tmux"]
-	path = tmux/.config/tmux/plugins/nord-tmux
-	url = https://github.com/arcticicestudio/nord-tmux
-[submodule "tmux-fzf"]
-	path = tmux-fzf
-	url = https://github.com/sainnhe/tmux-fzf.git
